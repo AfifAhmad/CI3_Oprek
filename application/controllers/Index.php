@@ -4,8 +4,13 @@ namespace Controller;
 
 class Index extends \CI_Controller {
 	
-	public function indexAction($userpath)
+	public function indexAction()
 	{
-		print_r(func_get_args());die;
+		$args = func_get_args();
+		if(array_key_exists(0, $args)){
+			if($args[0] == "steam.wallet"){
+				echo "Steam Wallet";
+			}
+		}
 	}
 }
